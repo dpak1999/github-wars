@@ -14,7 +14,7 @@ const PopularRepositories = () => {
   }, []);
   return (
     <>
-      <h1>Explore</h1>
+      <h1 className="App">Explore</h1>
       {loading ? (
         <Loader />
       ) : (
@@ -27,11 +27,11 @@ const PopularRepositories = () => {
                   <Card.Body>
                     <h1>{item.name}</h1>
                     <p>
-                      <i class="lni lni-user"></i>
+                      <i className="lni lni-user"></i>
                       {item.full_name}
                     </p>
                     <p>
-                      <i class="lni lni-star-filled"></i>
+                      <i className="lni lni-star-filled"></i>
                       {item.stargazers_count}
                     </p>
                   </Card.Body>
