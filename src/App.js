@@ -5,7 +5,6 @@ import PopularRepositories from "./Components/PopularRepositories";
 function App() {
   return (
     <div className="App">
-      App
       <PopularRepositories />
     </div>
   );
