@@ -8,3 +8,12 @@ export const getPopularRepos = (language) => {
       .catch((err) => reject(err));
   });
 };
+
+export const getUserData = (username) => {
+  return new Promise((resolve, reject) => {
+    fetch(`https://api.github.com/users/${username}`)
+      .then((res) => res.json())
+      .then((data) => resolve(data))
+      .catch((err) => reject(err));
+  });
+};
