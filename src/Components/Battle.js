@@ -144,7 +144,15 @@ const Battle = () => {
       </Row>
       <div className="button-battle">
         {playerOneSubmit && playerTwoSubmit && (
-          <Link to="/results">
+          <Link
+            to={{
+              pathname: "/results",
+              players: {
+                firstPlayer: playerOneData,
+                secondPlayer: playerTwoData,
+              },
+            }}
+          >
             <Button>Battle</Button>
           </Link>
         )}
