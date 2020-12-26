@@ -23,6 +23,17 @@ const Battle = () => {
     getUserData(playerTwo).then((res) => setPlayerTwoData(res));
   };
 
+  const handleReset = (e) => {
+    console.log(e.target.id);
+    if (e.target.id === "player-one") {
+      setPlayerOneSubmit(false);
+      setPlayerOne("");
+    } else {
+      setPlayerTwoSubmit(false);
+      setPlayerTwo("");
+    }
+  };
+
   return (
     <Container>
       <h1 className="App">Battle</h1>
@@ -50,6 +61,9 @@ const Battle = () => {
                   <span> </span>
                   {playerOneData.name}
                 </Card.Title>
+                <Button id="player-one" variant="primary" onClick={handleReset}>
+                  Reset
+                </Button>
               </Card.Body>
             </Card>
           </Col>
@@ -99,6 +113,9 @@ const Battle = () => {
                   <span> </span>
                   {playerTwoData.name}
                 </Card.Title>
+                <Button id="player-two" variant="primary" onClick={handleReset}>
+                  Reset
+                </Button>
               </Card.Body>
             </Card>
           </Col>
