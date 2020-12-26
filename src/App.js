@@ -5,6 +5,7 @@ import NavbarComponent from "./Components/NavbarComponent";
 import PopularRepositories from "./Components/PopularRepositories";
 import HomeComponent from "./Components/HomeComponent";
 import Battle from "./Components/Battle";
+import BattleResults from "./Components/BattleResults";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/" exact component={HomeComponent} />
       <Route path="/explore" exact component={PopularRepositories} />
       <Route path="/battle" exact component={Battle} />
+      <Route path="/results" exact component={BattleResults} />
     </Router>
   );
 }

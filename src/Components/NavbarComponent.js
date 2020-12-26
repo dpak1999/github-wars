@@ -8,13 +8,13 @@ const NavbarComponent = () => {
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
-            <i class="lni lni-github-original"></i> Battle
+            <i className="lni lni-github-original"></i> Battle
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <LinkContainer to="/">
+            <LinkContainer to="/battle">
               <Nav.Link>Battle</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/explore">

@@ -62,7 +62,6 @@ const PopularRepositories = () => {
                       margin: "auto",
                       marginTop: "1rem",
                     }}
-                    fluid
                     variant="top"
                     src={item.owner.avatar_url}
                   />
