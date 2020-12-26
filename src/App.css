@@ -58,3 +58,7 @@
 .clicked {
   color: green !important;
 }
+
+.button-battle {
+  text-align: center;
+}
