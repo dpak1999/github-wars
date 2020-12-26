@@ -24,7 +24,6 @@ const Battle = () => {
   };
 
   const handleReset = (e) => {
-    console.log(e.target.id);
     if (e.target.id === "player-one") {
       setPlayerOneSubmit(false);
       setPlayerOne("");
