@@ -14,7 +14,7 @@ const NavbarComponent = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <LinkContainer to="/battle">
+            <LinkContainer to="/">
               <Nav.Link>Battle</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/explore">
