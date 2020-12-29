@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.repo-navigation {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 25px auto;
+  padding-left: 0;
+}
+
+.repo-navigation li {
+  display: inline;
+  margin: 0 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: red;
+  cursor: pointer;
+}
+
+.clicked {
+  color: green !important;
+}
+
+.button-battle {
+  text-align: center;
+}

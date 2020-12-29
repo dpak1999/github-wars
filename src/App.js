@@ -1,15 +1,20 @@
-<<<<<<< HEAD
-import "./App.css";
-
-function App() {
-  return <div className="App">app</div>;
-=======
 import React from "react";
 import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import NavbarComponent from "./Components/NavbarComponent";
+import PopularRepositories from "./Components/PopularRepositories";
+import Battle from "./Components/Battle";
+import BattleResults from "./Components/BattleResults";
 
 function App() {
-  return <div className="App">App</div>;
->>>>>>> 175d4d8639fc98af0ba18752495c1b8aae48596b
+  return (
+    <Router>
+      <NavbarComponent />
+      <Route path="/" exact component={Battle} />
+      <Route path="/explore" exact component={PopularRepositories} />
+      <Route path="/results" exact component={BattleResults} />
+    </Router>
+  );
 }
 
 export default App;
