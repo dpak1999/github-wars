@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Row, Col, Container, Button } from "react-bootstrap";
+import { Row, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { getUserData } from "../utils/api";
 import FormComponent from "./FormComponent";
@@ -42,54 +42,21 @@ const Battle = () => {
         {playerOneSubmit ? (
           <Player player={playerOneData} reset={handleReset} id={1} />
         ) : (
-          <Col md={6} sm={12}>
-            <FormComponent
-              onSubmit={handleFirstSubmit}
-              className="button-battle"
-            >
-              <Form.Control
-                type="text"
-                value={playerOne}
-                onChange={(e) => {
-                  setPlayerOne(e.target.value);
-                }}
-                placeholder="Player 1"
-              />
-              <Button
-                type="submit"
-                className="my-3"
-                disabled={playerOne.length > 0 ? false : true}
-                variant="outline-primary"
-              >
-                Submit
-              </Button>
-            </FormComponent>
-          </Col>
+          <FormComponent
+            submit={handleFirstSubmit}
+            player={playerOne}
+            setPlayer={setPlayerOne}
+          />
         )}
 
         {playerTwoSubmit ? (
           <Player player={playerTwoData} reset={handleReset} id={2} />
         ) : (
-          <Col md={6} sm={12}>
-            <Form onSubmit={handleSecondSubmit} className="button-battle">
-              <Form.Control
-                type="text"
-                value={playerTwo}
-                onChange={(e) => {
-                  setPlayerTwo(e.target.value);
-                }}
-                placeholder="Player 2"
-              />
-              <Button
-                type="submit"
-                className="my-3"
-                disabled={playerTwo.length > 0 ? false : true}
-                variant="outline-primary"
-              >
-                Submit
-              </Button>
-            </Form>
-          </Col>
+          <FormComponent
+            submit={handleSecondSubmit}
+            player={playerTwo}
+            setPlayer={setPlayerTwo}
+          />
         )}
       </Row>
       <div className="button-battle">
