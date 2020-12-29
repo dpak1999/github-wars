@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Form, Row, Col, Container, Button, Card } from "react-bootstrap";
+import { Form, Row, Col, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { getUserData } from "../utils/api";
+import FormComponent from "./FormComponent";
+import Player from "./Player";
 
 const Battle = () => {
   const [playerOneSubmit, setPlayerOneSubmit] = useState(false);
@@ -24,7 +26,7 @@ const Battle = () => {
   };
 
   const handleReset = (e) => {
-    if (e.target.id === "player-one") {
+    if (e.target.id == 1) {
       setPlayerOneSubmit(false);
       setPlayerOne("");
     } else {
@@ -38,37 +40,13 @@ const Battle = () => {
       <h1 className="App">Battle</h1>
       <Row>
         {playerOneSubmit ? (
-          <Col lg={6} sm={12} key={playerOneData.id}>
-            <Card
-              className="my-3"
-              style={{ background: "rgba(11, 83, 69, 0.8)" }}
-            >
-              <Card.Img
-                style={{
-                  borderRadius: "50%",
-                  height: "14rem",
-                  width: "14rem",
-                  margin: "auto",
-                  marginTop: "1rem",
-                }}
-                variant="top"
-                src={playerOneData.avatar_url}
-              />
-              <Card.Body style={{ textAlign: "center", color: "white" }}>
-                <Card.Title>
-                  <i className="lni lni-user"></i>
-                  <span> </span>
-                  {playerOneData.name}
-                </Card.Title>
-                <Button id="player-one" variant="primary" onClick={handleReset}>
-                  Reset
-                </Button>
-              </Card.Body>
-            </Card>
-          </Col>
+          <Player player={playerOneData} reset={handleReset} id={1} />
         ) : (
           <Col md={6} sm={12}>
-            <Form onSubmit={handleFirstSubmit} className="button-battle">
+            <FormComponent
+              onSubmit={handleFirstSubmit}
+              className="button-battle"
+            >
               <Form.Control
                 type="text"
                 value={playerOne}
@@ -85,39 +63,12 @@ const Battle = () => {
               >
                 Submit
               </Button>
-            </Form>
+            </FormComponent>
           </Col>
         )}
 
         {playerTwoSubmit ? (
-          <Col lg={6} sm={12} key={playerTwoData.id}>
-            <Card
-              className="my-3"
-              style={{ background: "rgba(11, 83, 69, 0.8)" }}
-            >
-              <Card.Img
-                style={{
-                  borderRadius: "50%",
-                  height: "14rem",
-                  width: "14rem",
-                  margin: "auto",
-                  marginTop: "1rem",
-                }}
-                variant="top"
-                src={playerTwoData.avatar_url}
-              />
-              <Card.Body style={{ textAlign: "center", color: "white" }}>
-                <Card.Title>
-                  <i className="lni lni-user"></i>
-                  <span> </span>
-                  {playerTwoData.name}
-                </Card.Title>
-                <Button id="player-two" variant="primary" onClick={handleReset}>
-                  Reset
-                </Button>
-              </Card.Body>
-            </Card>
-          </Col>
+          <Player player={playerTwoData} reset={handleReset} id={2} />
         ) : (
           <Col md={6} sm={12}>
             <Form onSubmit={handleSecondSubmit} className="button-battle">
